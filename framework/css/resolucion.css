@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px) {
+    .ocultar-div{
+        display:none;
+        visibility:hidden;
+    }
+    .mostrar-div{
+        display:block;
+        visibility:visible;
+    }
+}
+@media screen and (min-width: 600px) {
+    .mostrar-div{
+        display:none;
+        visibility:hidden;
+    }
+
+}
