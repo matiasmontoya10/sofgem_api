@@ -29,8 +29,9 @@ class Api extends RestController {
         if ($contacto) {
             $this->response($contacto, 200);
         } else {
-            $this->response(NULL, 404); 
+            $this->response(NULL, 404);
         }
     }
-
+    
+    //http://user:pass@localhost/sofgem_api/api/function/
 }
