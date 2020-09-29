@@ -24,6 +24,21 @@ class Modelo extends CI_Model {
     }
 
     // Fin Api Model
+    // 
+    // Version Cliente
+
+    public function modelo_tabla_form_contacto() {
+        $this->db->select("*");
+        $this->db->from("contacto_tributario");
+        return $this->db->get();
+    }
+
+    public function modelo_id_form_contacto($id_form_contacto) {
+        $this->db->select("*");
+        $this->db->from("contacto_tributario");
+        $this->db->where("contacto_tributario.id_contacto =", $id_form_contacto);
+        return $this->db->get()->result();
+    }
 
     public function modelo_boton_contacto($nombre_contacto, $telefono_contacto, $fecha_contacto) {
         $data = array("nombre_contacto" => $nombre_contacto,
@@ -223,19 +238,6 @@ class Modelo extends CI_Model {
             "contenido_form_contacto" => $contenido_contacto
         );
         return $this->db->insert("form_contacto", $data);
-    }
-
-    public function modelo_tabla_form_contacto() {
-        $this->db->select("*");
-        $this->db->from("form_contacto");
-        return $this->db->get();
-    }
-
-    public function modelo_id_form_contacto($id_form_contacto) {
-        $this->db->select("*");
-        $this->db->from("form_contacto");
-        $this->db->where("form_contacto.id_form_contacto =", $id_form_contacto);
-        return $this->db->get()->result();
     }
 
     public function modelo_blog_imagen($id_blog) {

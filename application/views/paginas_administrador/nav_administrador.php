@@ -2,6 +2,9 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url(); ?>cliente/contacto_tributario">Contacto Tributario</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>cliente/creacion_usuario">Crear Usuario</a>
             </li>
             <li class="nav-item">

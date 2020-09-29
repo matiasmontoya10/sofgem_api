@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'cliente';
@@ -11,6 +12,10 @@ $route['contactos_tributario'] = 'api/api_contactos_tributario';
 $route['contacto_tributario'] = 'api/api_contacto_tributario';
 
 //Api Termino
+
+$route['tabla_form_contacto'] = 'cliente/controlador_tabla_form_contacto';
+$route['id_form_contacto_tabla'] = 'cliente/controlador_id_form_contacto_tabla';
+$route['id_form_contacto'] = 'cliente/controlador_id_form_contacto';
 
 $route['boton_contacto'] = 'cliente/controlador_boton_contacto';
 $route['contenido_blog'] = 'cliente/controlador_contenido_blog';
@@ -34,8 +39,6 @@ $route['eliminar_contacto'] = 'cliente/controlador_eliminar_contacto';
 
 $route['select_perfil_blog'] = 'cliente/controlador_select_perfil_blog';
 $route['crear_contacto'] = 'cliente/controlador_crear_contacto';
-$route['tabla_form_contacto'] = 'cliente/controlador_tabla_form_contacto';
-$route['id_form_contacto_tabla'] = 'cliente/controlador_id_form_contacto_tabla';
-$route['id_form_contacto'] = 'cliente/controlador_id_form_contacto';
+
 
 $route['blog_imagen'] = 'cliente/controlador_blog_imagen';

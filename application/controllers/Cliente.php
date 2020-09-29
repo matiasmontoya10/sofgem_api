@@ -64,9 +64,9 @@ class Cliente extends CI_Controller {
             redirect("cliente/index", 'refresh');
         }
     }
-    
+
     //--------------------------------------------------------------------------
-  
+
     public function creacion_usuario() {
         if ($this->session->userdata("administrador")) {
             $this->load->view('paginas_administrador/header_administrador');
@@ -317,4 +317,61 @@ class Cliente extends CI_Controller {
             echo json_encode(array("mensaje" => "Datos incorrectos u inexistentes"));
         }
     }
+
+    //--------------------------------------------------------------------------
+
+    public function contacto_tributario() {
+        if ($this->session->userdata("administrador")) {
+            $this->load->view('paginas_administrador/header_administrador');
+            $this->load->view('paginas_administrador/nav_administrador');
+            $this->load->view('paginas_administrador/contacto_tributario');
+            $this->load->view('paginas_administrador/footer_administrador');
+        } else {
+            redirect("cliente/index", 'refresh');
+        }
+    }
+
+    public function controlador_tabla_form_contacto() {
+        if ($this->session->userdata("administrador")) {
+            $draw = intval($this->input->get("draw"));
+            $listado_contacto = $this->modelo->modelo_tabla_form_contacto();
+            $data = array();
+
+            foreach ($listado_contacto->result() as $lista) {
+
+                $data[] = array(
+                    $lista->id_contacto,
+                    $lista->razon_social_contacto,
+                    $lista->rut_empresa_contacto,
+                    $lista->direccion_contacto,
+                    $lista->localidad_contacto,
+                    $lista->giro_contacto,
+                    $lista->correo_contacto,
+                    $lista->telefono_contacto,
+                    $lista->nombre_representante_contacto,
+                    $lista->rut_representante_contacto,
+                );
+            }
+            $output = array(
+                "draw" => $draw,
+                "recordsTotal" => $listado_contacto->num_rows(),
+                "recordsFiltered" => $listado_contacto->num_rows(),
+                "data" => $data
+            );
+            echo json_encode($output);
+            exit();
+        } else {
+            redirect("cliente/index", 'refresh');
+        }
+    }
+
+    public function controlador_id_form_contacto() {
+        if ($this->session->userdata("administrador")) {
+            $id_form_contacto = $this->input->post("id_form_contacto");
+            echo json_encode($this->modelo->modelo_id_form_contacto($id_form_contacto));
+        } else {
+            redirect("cliente/index", 'refresh');
+        }
+    }
+
 }

@@ -10,6 +10,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-lg-4">
+                <a href="<?php echo base_url(); ?>cliente/contacto_tributario">
+                    <span class="media-2 oscurecer">
+                        <img src="<?php echo base_url(); ?>framework/imagenes/menu/menu_panel.jpeg" alt="tue" width="500" height="250">
+                        <div class="media-2-content">
+                            <h2 style="color: white" class="oscurecer_texto_grande">CONTACTO TRIBUTARIO</h2>
+                            <span class="oscurecer_texto_pequeno">LISTADO DE CONTACTOS</span>
+                        </div>
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url(); ?>cliente/creacion_usuario">
                     <span class="media-2 oscurecer">
                         <img src="<?php echo base_url(); ?>framework/imagenes/menu/menu_panel.jpeg" alt="tue" width="500" height="250">
